@@ -33,7 +33,12 @@ namespace Rookie.Ecom.DataAccessor
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public List<T> GetAll()
+        {
+            return _dbContext.Set<T>().ToList();
+        }
+
+        public async Task<List<T>> GetAllAsync()
         {
             return await _dbContext.Set<T>().ToListAsync();
         }

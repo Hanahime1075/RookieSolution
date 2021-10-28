@@ -17,7 +17,7 @@ namespace Rookie.Ecom.Business
                .ForMember(d => d.Description, t => t.Ignore());
             CreateMap<ProductDto, Product>()
                 .ForMember(d => d.CreatedDate, t => t.Ignore())
-                .ForMember(d=>d.UpdatedDate,t=>t.Ignore());
+                .ForMember(d => d.UpdatedDate,t=>t.Ignore());
         }
 
         private void FromDataAccessorLayer()

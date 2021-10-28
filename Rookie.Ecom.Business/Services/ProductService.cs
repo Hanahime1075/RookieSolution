@@ -15,13 +15,16 @@ namespace Rookie.Ecom.Business.Services
     public class ProductService : IProductService
     {
         private readonly IGenericRepository<Product> _genericRepository;
+        private readonly IGenericRepository<Category> _categoryRepository;
         private readonly IMapper _mapper;
 
         public ProductService(
             IGenericRepository<Product> genericRepository,
+            IGenericRepository<Category> categoryRepository,
             IMapper mapper)
         {
             _genericRepository = genericRepository;
+            _categoryRepository = categoryRepository;
             _mapper = mapper;
         }
 
@@ -48,6 +51,11 @@ namespace Rookie.Ecom.Business.Services
         {
             var product = await _genericRepository.GetByIdAsync(id);
             return _mapper.Map<ProductDto>(product);
+        }
+
+        public Task<PagedResponseModel<CategoryDto>> PagedQueryAsync(FilterAssignmentsModel filter)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task UpdateAsync(ProductDto productDto)
