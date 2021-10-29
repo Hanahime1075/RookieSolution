@@ -8,7 +8,7 @@ namespace Rookie.Ecom.Business.Interfaces
     public interface ICategoryService
     {
         Task<IEnumerable<CategoryDto>> GetAllAsync();
-        
+
         Task<CategoryDto> GetByIdAsync(Guid id);
 
         Task<CategoryDto> AddAsync(CategoryDto categoryDto);

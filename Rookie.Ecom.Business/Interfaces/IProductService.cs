@@ -11,6 +11,8 @@ namespace Rookie.Ecom.Business.Interfaces
     {
         Task<IEnumerable<ProductDto>> GetAllAsync();
 
+        Task<PagedResponseModel<CategoryDto>> PagedQueryAsync(FilterAssignmentsModel filter);
+
         Task<ProductDto> GetByIdAsync(Guid id);
 
         Task<ProductDto> AddAsync(ProductDto productDto);

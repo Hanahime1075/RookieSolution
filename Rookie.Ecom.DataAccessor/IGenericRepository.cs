@@ -14,7 +14,9 @@ namespace Rookie.Ecom.DataAccessor
 
         Task<T> GetByAsync(Expression<Func<T, bool>> filter = null, string includeProperties = "");
 
-        Task<IEnumerable<T>> GetAllAsync();
+        List<T> GetAll();
+        Task<List<T>> GetAllAsync();
+
         Task<T> AddAsync(T entity);
 
         Task UpdateAsync(T entity);
